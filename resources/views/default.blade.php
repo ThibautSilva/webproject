@@ -6,18 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
-    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{url('/css/style.css')}}">
+
+
+
 
 </head>
 <body>
+<div class="container-fluid">
+    <div class="header">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{url('/images/logo.png')}}" alt="Image"/>
+            </div>
 
-<div class="header">
-    <div class="logo">
-        <img src="">
+            <div class="header_tittle">
+                <p>Socopec</p>
+            </div>
+        </div>
     </div>
-</div>
-<div class="header_bottom">
+    <div class="header_bottom">
 
+    </div>
 </div>
 
 
