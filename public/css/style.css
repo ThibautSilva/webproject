@@ -11,23 +11,39 @@ body, html {
 }
 
 
+
 .header {
     background: #0097D8;
     height: 120px;
     top:0;
     right: 0;
     position: relative;
+    margin: 0;
 }
 
-.header_tittle {
-
-    z-index: 1;
-}
 
 
 .header_bottom {
     background: #005DA8;
     height: 50px;
     position: relative;
+}
+
+
+.header_tittle {
+    z-index: 0;
+    font-family: LeagueGothicReg;
+    font-size: 550%;
+}
+
+.logo {
+    text-align: right;
+}
+
+.deconnexion {
+    margin-top:25px;
+    width: 85px;
+    height: 70px;
+    background: #FFE500;
 }
 
