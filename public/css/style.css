@@ -42,8 +42,28 @@ body, html {
 
 .deconnexion {
     margin-top:25px;
-    width: 85px;
+    width: 90px;
     height: 70px;
     background: #FFE500;
+    text-align: center;
 }
+
+#menu_principal {
+    z-index: 0;
+}
+
+#menu {
+    width: 100%;
+    padding: 0;
+}
+
+ul li {
+    display:block;
+    float:left;
+    width:25%;
+    text-decoration:none;
+    text-align:center;
+    color: white;
+}
+
 

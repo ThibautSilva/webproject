@@ -26,13 +26,25 @@
             </div>
             <div class="col-md-4">
                 <div class="deconnexion">
-                        <span class="glyphicon glyphicon-user"></span>Déconnexion
+                    <span class="glyphicon glyphicon-user"></span>
                 </div>
             </div>
 
         </div>
     </div>
     <div class="header_bottom">
+        <nav id="menu">
+            <div class="container">
+                <div class="col-md-12">
+                <ul id="menu_principal">
+                    <li>Ajouter une agence</li>
+                    <li>Rechercher</li>
+                    <li>Nos agents</li>
+                    <li>Nos véhicules</li>
+                </ul>
+                </div>
+            </div>
+        </nav>
 
     </div>
 </div>
