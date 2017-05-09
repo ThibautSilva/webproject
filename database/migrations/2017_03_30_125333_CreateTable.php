@@ -13,6 +13,14 @@ class CreateTable extends Migration
      */
     public function up()
     {
+        Schema::create('utilisateur', function(Blueprint $table){
+            $table->increments('id')->unique();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('mail');
+            $table->string('mdp');
+        });
+
         Schema::create('agent', function(Blueprint $table){
             $table->increments('id')->unique();
             $table->string('nom');

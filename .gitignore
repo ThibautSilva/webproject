@@ -1,1 +1,3 @@
 .idea/
+.env
+config/database.php
