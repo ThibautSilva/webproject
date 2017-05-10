@@ -11,4 +11,17 @@ use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
+
+
+    public function nosAgence () {
+        $title = "Nos agences";
+        return view('nosAgences', ['title' => $title]);
+    }
+
+    public function connexion () {
+        $title = "Connexion";
+        return view('connection', ['title' => $title]);
+    }
+
+
 }
