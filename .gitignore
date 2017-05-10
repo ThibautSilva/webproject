@@ -4,3 +4,5 @@
 Homestead.yaml
 Homestead.json
 config/database.php
+.env
+.idea
