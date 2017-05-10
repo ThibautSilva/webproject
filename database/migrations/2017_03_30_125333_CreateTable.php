@@ -13,21 +13,19 @@ class CreateTable extends Migration
      */
     public function up()
     {
-        Schema::create('utilisateur', function(Blueprint $table){
-            $table->increments('id')->unique();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('mail');
-            $table->string('mdp');
-        });
-
-        Schema::create('agent', function(Blueprint $table){
-            $table->increments('id')->unique();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->integer('telephone');
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');            
+            $table->string('firstname');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->integer('phone');
             $table->integer('fax');
+            $table->integer('mobile');
+            $table->boolean('admin')->default(false);
             $table->integer('agence_id')->unsigned();
+            $table->rememberToken();
+            $table->timestamps();
         });
         Schema::create('agence', function(Blueprint $table){
             $table->increments('id')->unique();
@@ -37,7 +35,7 @@ class CreateTable extends Migration
             $table->integer('telephone');
             $table->integer('fax');
         });
-        Schema::create('voiture', function(Blueprint $table){
+        Schema::create('vehicule', function(Blueprint $table){
             $table->increments('id')->unique();
             $table->string('modele');
             $table->date('datefabrication');
@@ -48,18 +46,31 @@ class CreateTable extends Migration
             $table->integer('agence_id')->unsigned();
             $table->integer('statut_id')->unsigned();
         });
+        Schema::create('historique', function(Blueprint $table){
+            $table->increments('id')->unique();
+            $table->date('debutloc');
+            $table->date('finloc');
+            $table->integer('users_id')->unsigned();
+            $table->integer('vehicule_id')->unsigned();
+        });
         Schema::create('statut', function(Blueprint $table){
             $table->increments('id')->unique();
             $table->string('name');
         });
-        Schema::table('agent', function(Blueprint $table){
+        Schema::table('users', function(Blueprint $table){
+            $table->foreign('agence_id')->references('id')->on('users');
+        });
+        Schema::table('vehicule', function(Blueprint $table){
             $table->foreign('agence_id')->references('id')->on('agence');
         });
-        Schema::table('voiture', function(Blueprint $table){
-            $table->foreign('agence_id')->references('id')->on('agence');
-        });
-        Schema::table('voiture', function(Blueprint $table){
+        Schema::table('vehicule', function(Blueprint $table){
             $table->foreign('statut_id')->references('id')->on('statut');
+        });
+        Schema::table('historique', function(Blueprint $table){
+            $table->foreign('users_id')->references('id')->on('users');
+        });
+        Schema::table('historique', function(Blueprint $table){
+            $table->foreign('vehicule_id')->references('id')->on('vehicule');
         });
     }
 

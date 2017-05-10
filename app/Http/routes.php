@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('default');
+    return view('nosAgences');
 });
+
+Route::get('/agences', function () {
+    return view('nosAgences');
+});
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
