@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('connection');
+    return view('nosAgences');
 });
 
 Route::get('/agences', function () {
