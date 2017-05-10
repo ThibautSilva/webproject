@@ -21,6 +21,8 @@ class CreateTable extends Migration
             $table->string('password');
             $table->integer('phone');
             $table->integer('fax');
+            $table->integer('mobile');
+            $table->boolean('admin')->default(false);
             $table->integer('agence_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();
