@@ -35,7 +35,7 @@ class CreateTable extends Migration
             $table->integer('telephone');
             $table->integer('fax');
         });
-        Schema::create('voiture', function(Blueprint $table){
+        Schema::create('vehicule', function(Blueprint $table){
             $table->increments('id')->unique();
             $table->string('modele');
             $table->date('datefabrication');
@@ -46,6 +46,13 @@ class CreateTable extends Migration
             $table->integer('agence_id')->unsigned();
             $table->integer('statut_id')->unsigned();
         });
+        Schema::create('historique', function(Blueprint $table){
+            $table->increments('id')->unique();
+            $table->date('debutloc');
+            $table->date('finloc');
+            $table->integer('users_id')->unsigned();
+            $table->integer('vehicule_id')->unsigned();
+        });
         Schema::create('statut', function(Blueprint $table){
             $table->increments('id')->unique();
             $table->string('name');
@@ -53,11 +60,17 @@ class CreateTable extends Migration
         Schema::table('users', function(Blueprint $table){
             $table->foreign('agence_id')->references('id')->on('users');
         });
-        Schema::table('voiture', function(Blueprint $table){
+        Schema::table('vehicule', function(Blueprint $table){
             $table->foreign('agence_id')->references('id')->on('agence');
         });
-        Schema::table('voiture', function(Blueprint $table){
+        Schema::table('vehicule', function(Blueprint $table){
             $table->foreign('statut_id')->references('id')->on('statut');
+        });
+        Schema::table('historique', function(Blueprint $table){
+            $table->foreign('users_id')->references('id')->on('users');
+        });
+        Schema::table('historique', function(Blueprint $table){
+            $table->foreign('vehicule_id')->references('id')->on('vehicule');
         });
     }
 
