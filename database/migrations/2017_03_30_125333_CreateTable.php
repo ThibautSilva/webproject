@@ -19,32 +19,32 @@ class CreateTable extends Migration
             $table->string('firstname');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('phone');
-            $table->integer('fax');
-            $table->integer('mobile');
+            $table->integer('phone')->nullable();
+            $table->integer('fax')->nullable();
+            $table->integer('mobile')->nullable();
             $table->boolean('admin')->default(false);
-            $table->integer('agence_id')->unsigned();
+            $table->integer('agence_id')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
         Schema::create('agence', function(Blueprint $table){
             $table->increments('id')->unique();
-            $table->string('urlphoto');
+            $table->string('urlphoto')->nullable();
             $table->string('nom');
             $table->string('adresse');
             $table->integer('telephone');
-            $table->integer('fax');
+            $table->integer('fax')->nullable();
         });
         Schema::create('vehicule', function(Blueprint $table){
             $table->increments('id')->unique();
             $table->string('modele');
-            $table->date('datefabrication');
-            $table->integer('hauteur');
-            $table->integer('largeur');
-            $table->integer('poids');
-            $table->integer('puissance');
-            $table->integer('agence_id')->unsigned();
-            $table->integer('statut_id')->unsigned();
+            $table->date('datefabrication')->nullable();
+            $table->integer('hauteur')->nullable();
+            $table->integer('largeur')->nullable();
+            $table->integer('poids')->nullable();
+            $table->integer('puissance')->nullable();
+            $table->integer('agence_id')->unsigned()->nullable();
+            $table->integer('statut_id')->unsigned()->nullable();
         });
         Schema::create('historique', function(Blueprint $table){
             $table->increments('id')->unique();
@@ -81,6 +81,10 @@ class CreateTable extends Migration
      */
     public function down()
     {
-        
+        Schema::drop('historique');
+        Schema::drop('vehicule');        
+        Schema::drop('agence');
+        Schema::drop('users');
+        Schema::drop('statut');
     }
 }
