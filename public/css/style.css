@@ -10,6 +10,33 @@ body, html {
     src: url("../fonts/LeagueGothic/LeagueGothic-Regular.otf");
 }
 
+@font-face {
+    font-family: "SegoeUIEmoji";
+    src: url("../fonts/SegoeUIEmoji/seguiemj.ttf");
+}
+
+h1 {
+    font-family: SegoeUIEmoji;
+    color: #0097D8;
+}
+
+
+.title {
+    position: relative;
+    width: 800px;
+    height: 71px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.title img {
+    position: relative;
+    float: left;
+}
+
+.title h1 {
+    margin-top: 15px;
+}
 
 
 .header {
@@ -38,6 +65,7 @@ body, html {
 
 .logo {
     text-align: right;
+    margin-top: 2px;
 }
 
 .deconnexion {
@@ -48,8 +76,11 @@ body, html {
     text-align: center;
 }
 
-#menu_principal {
+ul {
+    margin-top: 1.5px;
     z-index: 0;
+    width: 100%;
+    height: 30px;
 }
 
 #menu {
@@ -66,4 +97,75 @@ ul li {
     color: white;
 }
 
+.container-fluid-no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+span.glyphicon-user {
+    margin-top: 10px;
+    font-size: 1.6em;
+}
+
+.nosAgence {
+    position: relative;
+    width:70%;
+    height: auto;
+    margin: 100px 20% 0 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+[data-wipe] {
+    display: inline-block;
+    padding: 12px 18px;
+    text-decoration: none;
+    position: relative;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #F1F1F2;
+    overflow: hidden;
+}
+[data-wipe]:before, [data-wipe]:after {
+    content: attr(data-wipe);
+    padding-top: inherit;
+    padding-bottom: inherit;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    color: #F1F1F2;
+    background: #445561;
+}
+[data-wipe]:before {
+    left: 0;
+    text-indent: 18px;
+    width: 0;
+}
+[data-wipe]:after {
+    padding-left: inherit;
+    padding-right: inherit;
+    left: 100%;
+    text-indent: calc(-100% - 36px);
+    transition: 0.2s ease-in-out;
+}
+[data-wipe]:hover:before {
+    width: 100%;
+    transition: width 0.2s ease-in-out;
+}
+[data-wipe]:hover:after {
+    left: 0;
+    text-indent: 0;
+    transition: 0s 0.2s ease-in-out;
+}
 
