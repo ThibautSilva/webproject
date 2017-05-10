@@ -13,21 +13,17 @@ class CreateTable extends Migration
      */
     public function up()
     {
-        Schema::create('utilisateur', function(Blueprint $table){
-            $table->increments('id')->unique();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('mail');
-            $table->string('mdp');
-        });
-
-        Schema::create('agent', function(Blueprint $table){
-            $table->increments('id')->unique();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->integer('telephone');
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');            
+            $table->string('firstname');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->integer('phone');
             $table->integer('fax');
             $table->integer('agence_id')->unsigned();
+            $table->rememberToken();
+            $table->timestamps();
         });
         Schema::create('agence', function(Blueprint $table){
             $table->increments('id')->unique();
@@ -52,8 +48,8 @@ class CreateTable extends Migration
             $table->increments('id')->unique();
             $table->string('name');
         });
-        Schema::table('agent', function(Blueprint $table){
-            $table->foreign('agence_id')->references('id')->on('agence');
+        Schema::table('users', function(Blueprint $table){
+            $table->foreign('agence_id')->references('id')->on('users');
         });
         Schema::table('voiture', function(Blueprint $table){
             $table->foreign('agence_id')->references('id')->on('agence');
