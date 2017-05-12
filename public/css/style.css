@@ -133,16 +133,52 @@ span.glyphicon-user {
     background-color: #0097D8;
     position: relative;
     width: 250px;
-    height: 300px;
+    height: 350px;
     border-radius: 10px;
     margin-right: 10%;
     margin-bottom: 7%;
 
 }
 
+.divPhotoAgence {
+    margin: 10px;
+}
 
+.photoAgence {
+    width: 230px;
+}
 
+.titreAgence {
+    color: white;
+    font-family: LeagueGothicReg;
+    font-size: 200%;
+    text-align: center;
+    width: 230px;
+    margin: 10px;
+}
 
+.adresseAgence {
+    color: white;
+    font-family: LeagueGothicReg;
+    font-size: 150%;
+    margin: 10px;
+    word-break: break-all;
+    text-align: center;
+}
+
+.buttonVoir {
+    background-color: #005DA8;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 120%;
+    font-family: LeagueGothicReg;
+}
+
+.divButtonVoir {
+    width: 28%;
+    margin: 0 auto;
+}
 
 [data-wipe] {
     display: inline-block;
