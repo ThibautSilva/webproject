@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title')</title>
+
     <link rel="stylesheet" type="text/css" href="{{url('/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('/css/style.css')}}">
 
@@ -26,7 +27,7 @@
             </div>
             <div class="col-md-4">
                 <div class="deconnexion">
-                    <span class="glyphicon glyphicon-user"></span>Déconnecter
+                    <span class="glyphicon glyphicon-user"><br><a href="{{ url('/logout') }}">Déconnecter</a></span>
                 </div>
             </div>
 
@@ -53,5 +54,7 @@
 @yield('content')
 
 @yield('connect')
+
+@yield('register')
 </body>
 </html>

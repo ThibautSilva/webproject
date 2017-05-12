@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('auth/register');
+    return view('nosAgences');
+});
+
+Route::get('/connection', function () {
+    return view('auth/login');
 });
 
 Route::get('/agences', function () {

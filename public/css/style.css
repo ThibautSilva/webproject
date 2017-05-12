@@ -20,6 +20,10 @@ h1 {
     color: #0097D8;
 }
 
+a {
+    text-decoration: none;
+}
+
 
 .title {
     position: relative;
@@ -70,7 +74,7 @@ h1 {
 
 .deconnexion {
     margin-top:25px;
-    width: 90px;
+    width: 130px;
     height: 70px;
     background: #FFE500;
     text-align: center;
@@ -109,18 +113,32 @@ span.glyphicon-user {
 
 .nosAgence {
     position: relative;
-    width:70%;
+    width:100%;
     height: auto;
-    margin: 100px 20% 0 20%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .connection {
     margin-top: 10%;
 }
 
+.register {
+    margin-top: 3%;
+}
 
+.agence {
+    background-color: #0097D8;
+    position: relative;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    margin-right: 10%;
+    margin-bottom: 7%;
 
-
+}
 
 
 
