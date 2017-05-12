@@ -9,23 +9,24 @@
 
     <link rel="stylesheet" type="text/css" href="{{url('/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('/css/style.css')}}">
+    <link rel="icon" href="{{ url('/images/logo.png')}}">
 
 </head>
 <body>
 <div class="container-fluid container-fluid-no-padding">
     <div class="header">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-xs-4 col-sm-4">
                 <div class="logo">
                     <img src="{{url('/images/logo.png')}}" alt="Image"/>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-xs-4 col-sm-4">
                 <div class="header_tittle">
                     <p>Socopec</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-xs-4 col-sm-4">
                 <div class="deconnexion">
                     <span class="glyphicon glyphicon-user"><br><a href="{{ url('/logout') }}">Déconnecter</a></span>
                 </div>
@@ -35,8 +36,8 @@
     </div>
     <div class="header_bottom">
         <nav id="menu">
-            <div class="container">
-                <div class="col-md-12">
+
+                <div class="col-xs-12 col-md-12">
                 <ul>
                     {{--Ajouter return view('nomVue');--}}
                     <li><a href="#" class="btn" data-wipe="Ajouter une agence">Ajouter une agence</a></li>
@@ -45,7 +46,7 @@
                     <li><a href="#" class="btn" data-wipe="Nos véhicules">Nos véhicules</a></li>
                 </ul>
                 </div>
-            </div>
+
         </nav>
 
     </div>
@@ -56,5 +57,7 @@
 @yield('connect')
 
 @yield('register')
+
+@yield('agence')
 </body>
 </html>

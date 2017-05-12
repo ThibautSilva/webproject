@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('nosAgences');
+    return view('default');
 });
 
 Route::get('/connection', function () {
@@ -21,6 +21,10 @@ Route::get('/connection', function () {
 
 Route::get('/agences', function () {
     return view('nosAgences');
+});
+
+Route::get('/agence', function () {
+    return view('agence');
 });
 
 Route::auth();
