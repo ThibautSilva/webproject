@@ -8,7 +8,7 @@
             {!! Form::open(['method' => 'post']) !!}
             <div class="form-group">
 
-                {!! Form::label('title', 'Marque / Modèle') !!}
+                {!! Form::label('title', 'Marque / Modèle *') !!}
                 {!! Form::text ('marque', '', ['class' =>'form-control']) !!}
 
             </div>

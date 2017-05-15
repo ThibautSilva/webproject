@@ -61,5 +61,7 @@
 @yield('agence')
 
 @yield('ajoutVehicule')
+
+@yield('addAgence')
 </body>
 </html>

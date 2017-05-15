@@ -29,6 +29,11 @@ Route::get('/agence', function () {
 
 Route::get('/ajouterVehicule', function () {
     return view('addVehicle');
+
+});
+
+Route::get('/ajouterAgence', function () {
+    return view('addAgence');
 });
 
 Route::auth();
