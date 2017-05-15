@@ -48,6 +48,13 @@
 
             </div>
 
+            <div class="form-group">
+
+                {!! Form::label('title', 'Photo du véhicule') !!}
+                {!! Form::file ('photo', '', ['class' =>'form-control']) !!}
+
+            </div>
+
            {{-- <div class="form-group">
 
                 {!! Form::label('title', 'Agence') !!}
