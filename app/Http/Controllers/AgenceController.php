@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Agence;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use App\Agence;
 
-class HomeController extends Controller
+class AgenceController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $agences = App/Agence::all();
-        return View::make('nosAgences')->with('agences', $agences);
+        $agences = Agence::all();
+        return view('nosAgences')->with("agences", $agences);
     }
 }

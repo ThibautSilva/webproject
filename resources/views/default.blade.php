@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="logo">
-                    <img src="{{url('/images/logo.png')}}" alt="Image"/>
+                    <a href="{{ url('/') }}"><img src="{{url('/images/logo.png')}}" alt="Image"/></a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -25,11 +25,13 @@
                     <p>Socopec</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="deconnexion">
-                    <span class="glyphicon glyphicon-user"><br><a href="{{ url('/logout') }}">Déconnecter</a></span>
+            @if (Auth::check())
+                <div class="col-md-4">
+                    <div class="deconnexion">
+                        <span class="glyphicon glyphicon-user"><br><a href="{{ url('/logout') }}">Déconnecter</a></span>
+                    </div>
                 </div>
-            </div>
+            @endif
 
         </div>
     </div>
@@ -42,7 +44,7 @@
                     <li><a href="#" class="btn" data-wipe="Ajouter une agence">Ajouter une agence</a></li>
                     <li><a href="#" class="btn" data-wipe="Rechercher">Rechercher</a></li>
                     <li><a href="#" class="btn" data-wipe="Nos agents">Nos agents</a></li>
-                    <li><a href="#" class="btn" data-wipe="Nos véhicules">Nos véhicules</a></li>
+                    <li><a href="{{ url('/vehicules') }}" class="btn" data-wipe="Nos véhicules">Nos véhicules</a></li>
                 </ul>
                 </div>
             </div>
