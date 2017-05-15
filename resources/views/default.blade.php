@@ -59,5 +59,7 @@
 @yield('register')
 
 @yield('agence')
+
+@yield('ajoutVehicule')
 </body>
 </html>

@@ -264,7 +264,10 @@ span.glyphicon-user {
     margin: 2% 2% 0 42.5%;
 }
 
-
+.formAddVehicle {
+    width:40%;
+    margin: 0 30%;
+}
 
 @media screen and (max-width: 720px) {
 

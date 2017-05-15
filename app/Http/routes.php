@@ -27,6 +27,10 @@ Route::get('/agence', function () {
     return view('agence');
 });
 
+Route::get('/ajouterVehicule', function () {
+    return view('addVehicle');
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
