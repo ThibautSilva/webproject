@@ -37,7 +37,7 @@
                     <div class="recapInfoVehicule">
                         <div class="infoVehicule">Citroen C3</div>
                         <div class="infoVehicule">2003</div>
-                        <div class="infoVehicule">65</div>
+                        <div class="infoVehicule">65 CV</div>
                         <div class="infoVehicule">3 m 20</div>
                         <div class="infoVehicule">1 m 99</div>
                         <div class="infoVehicule">870Kg</div>
