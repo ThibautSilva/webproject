@@ -28,4 +28,9 @@ class AgenceController extends Controller
         $agences = Agence::all();
         return view('nosAgences')->with("agences", $agences);
     }
+
+    public function showAgency($id)
+    {
+        return view('agence', ['agence' => Agence::findOrFail($id)]);
+    }
 }

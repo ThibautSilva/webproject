@@ -15,8 +15,8 @@ Route::auth();
 
 Route::get('/', 'AgenceController@index');
 
+Route::get('/agences', 'AgenceController@index');
+
 Route::get('/vehicules', 'VehiculeController@index');
 
-Route::get('/agence', function () {
-    return view('agence');
-});
+Route::get('/agence/{id}', 'AgenceController@showAgency');
