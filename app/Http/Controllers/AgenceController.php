@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Agence;
 use App\Http\Requests;
+use App\Vehicule;
 use Illuminate\Http\Request;
 
 class AgenceController extends Controller
@@ -31,6 +32,6 @@ class AgenceController extends Controller
 
     public function showAgency($id)
     {
-        return view('agence', ['agence' => Agence::findOrFail($id)]);
+        return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => Vehicule::all()]);
     }
 }
