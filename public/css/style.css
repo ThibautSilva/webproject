@@ -33,6 +33,15 @@ a {
     margin-top: 20px;
 }
 
+.titleForm {
+    margin-bottom: 4% ;
+    position: relative;
+    width: 800px;
+    height: 71px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
 .title img {
     position: relative;
     float: left;
@@ -269,6 +278,9 @@ span.glyphicon-user {
     margin: 0 30%;
 }
 
+.formNosAgent {
+}
+
 @media screen and (max-width: 720px) {
 
     [data-wipe] {
@@ -363,4 +375,70 @@ span.glyphicon-user {
     text-indent: 0;
     transition: 0s 0.2s ease-in-out;
 }
+
+
+
+#rounded-corner
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+/	margin: 0px;
+    margin-left:auto;
+    margin-right:auto;
+/	width: 480px;
+/	text-align: center;
+    border-collapse: collapse;
+    margin-top : 4%;
+}
+#rounded-corner thead th.hg
+{
+/	background: #a6a6a6 url('table-images/left.png') left -1px no-repeat;
+    border-radius:10px 0 0 0;
+}
+#rounded-corner thead th.hd
+{
+/	background: #a6a6a6 url('table-images/right.png') right -1px no-repeat;
+    border-radius:0 10px 0 0;
+}
+#rounded-corner th
+{
+    padding: 8px;
+    font-weight: normal;
+    font-size: 15px;
+    color: #3b3b3b;
+    background: #a6a6a6;
+}
+#rounded-corner td
+{
+    padding: 8px;
+    background: #efefef;
+    border-top: 1px solid #fff;
+    color: #3b3b3b;
+}
+#rounded-corner tfoot td.rounded-foot-left
+{
+/	background: #efefef url('table-images/botleft.png') left bottom no-repeat;
+    border-radius:0 0 0 10px;
+    font-size: 10pt;
+    font-style: italic;
+    color: grey;
+}
+#rounded-corner tfoot td.rounded-foot-right
+{
+/	background: #efefef url('table-images/botright.png') right bottom no-repeat;
+    border-radius:0 0 10px 0;
+}
+#rounded-corner tfoot td.footer
+{
+/	background: #efefef url('table-images/botleft.png') left bottom no-repeat;
+    border-radius:0 0 10px 10px;
+    font-size: 10pt;
+    font-style: italic;
+    color: grey;
+}
+#rounded-corner tbody tr:hover td
+{
+    background: #d0dafd;
+}
+
 

@@ -5,7 +5,9 @@
 
     <div class="container">
         <div class="formAddVehicle">
-            <h1>Ajouter une agence</h1>
+            <div class="titleForm">
+                <h1>Ajouter une agence</h1>
+            </div>
             {!! Form::open(['method' => 'post']) !!}
             <div class="form-group">
 
@@ -42,7 +44,7 @@
             <div class="form-group">
 
                 {!! Form::label('title', 'Photo de l\'agence') !!}
-                {!! Form::file ('photo', '', ['class' =>'form-control']) !!}
+                {!! Form::file ('urlphoto', '', ['class' =>'form-control']) !!}
                 {!! $errors->first('photo', '<small class="help-block">:message</small>') !!}
 
             </div>
@@ -55,9 +57,9 @@
              </div>
  --}}
             {!! Form::submit('Envoyer !', ['class' => 'btn btn-primary']) !!}
-{{--
-            <button class="btn btn-primary">Envoyer</button>
---}}
+            {{--
+                        <button class="btn btn-primary">Envoyer</button>
+            --}}
         </div>
 
 

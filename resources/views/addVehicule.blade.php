@@ -4,7 +4,9 @@
 @section("ajoutVehicule")
     <div class="container">
         <div class="formAddVehicle">
-            <h1>Ajouter un véhicule</h1>
+            <div class="titleForm">
+                <h1>Ajouter un véhicule</h1>
+            </div>
             {!! Form::open(['method' => 'post']) !!}
             <div class="form-group">
 
