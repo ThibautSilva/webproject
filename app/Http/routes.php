@@ -19,7 +19,7 @@ Route::get('/agence/list', 'AgenceController@index');
 
 Route::get('/vehicule/list', 'VehiculeController@index');
 
-//Route::get('/agent/list', 'AgentController@index');
+Route::get('/agent/list', 'AgentController@index');
 
 Route::get('/vehicule/add', 'VehiculeController@addVehiculeInfos');
 
@@ -35,4 +35,4 @@ Route::get('/agence/{id}', 'AgenceController@showAgency');
 
 Route::get('/vehicule/{id}', 'VehiculeController@showVehicule');
 
-//Route::get('/agent/{id}', 'AgentController@showAgent');
+Route::get('/agent/{id}', 'AgentController@showAgent');
