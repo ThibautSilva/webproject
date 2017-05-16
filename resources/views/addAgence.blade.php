@@ -11,6 +11,7 @@
 
                 {!! Form::label('title', 'Nom *') !!}
                 {!! Form::text ('nom', '', ['class' =>'form-control']) !!}
+                {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
 
             </div>
 
@@ -18,6 +19,7 @@
 
                 {!! Form::label('title', 'Adresse *') !!}
                 {!! Form::text ('adresse', '', ['class' =>'form-control']) !!}
+                {!! $errors->first('adresse', '<small class="help-block">:message</small>') !!}
 
             </div>
 
@@ -25,6 +27,7 @@
 
                 {!! Form::label('title', 'Téléphone *') !!}
                 {!! Form::text ('telephone', '', ['class' =>'form-control']) !!}
+                {!! $errors->first('telephone', '<small class="help-block">:message</small>') !!}
 
             </div>
 
@@ -32,6 +35,7 @@
 
                 {!! Form::label('title', 'Fax') !!}
                 {!! Form::text ('fax', '', ['class' =>'form-control']) !!}
+                {!! $errors->first('fax', '<small class="help-block">:message</small>') !!}
 
             </div>
 
@@ -39,6 +43,7 @@
 
                 {!! Form::label('title', 'Photo de l\'agence') !!}
                 {!! Form::file ('photo', '', ['class' =>'form-control']) !!}
+                {!! $errors->first('photo', '<small class="help-block">:message</small>') !!}
 
             </div>
 
@@ -49,7 +54,10 @@
 
              </div>
  --}}
+            {!! Form::submit('Envoyer !', ['class' => 'btn btn-primary']) !!}
+{{--
             <button class="btn btn-primary">Envoyer</button>
+--}}
         </div>
 
 

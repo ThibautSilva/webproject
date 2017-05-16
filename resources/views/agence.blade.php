@@ -7,7 +7,7 @@
     <div class="container">
         <div class="infoAgence">
             <div class="monAgence">
-                {{ Html::image('images/' . $agence->urlphoto, 'a picture', array('class' => 'photoPageAgence')) }}
+                {{ Html::image('images/' . $agence->urlphoto, 'agence', array('class' => 'photoPageAgence', 'onerror' => 'images/agence2.jpg')) }}
                 <div class="agenceAdresse">
                     <h1>{{$agence->nom}}</h1>
                     <p>{{$agence->adresse}}</p>

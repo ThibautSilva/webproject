@@ -35,8 +35,16 @@ class VehiculeController extends Controller
         return view('vehicule', ['vehicule' => Vehicule::findOrFail($id)]);
     }
 
-    public function addVehicule()
+    public function addVehiculeInfos()
     {
         return view('addVehicule', ['agences' => Agence::all()]); //pass id agence
+    }
+
+    public function addVehiculePost(Requests\AddVehiculeRequest $request)
+    {
+        $vehicule = new Vehicule;
+        $vehicule->modele = $request->input('marque');
+        $vehicule->save();
+        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id)]);
     }
 }

@@ -35,8 +35,18 @@ class AgenceController extends Controller
         return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => Vehicule::all()]);
     }
 
-    public function addAgency()
+    public function addAgencyInfos()
     {
         return view('addAgence');
+    }
+
+    public function addAgencyPost(Requests\AddAgencyRequest $request)
+    {
+        $agency = new Agence;
+        $agency->nom = $request->input('nom');
+        $agency->adresse = $request->input('adresse');
+        $agency->telephone = $request->input('telephone');
+        $agency->save();
+        return view('agence', ['agence' => Agence::findOrFail($agency->id), 'vehicules' => Vehicule::all()]);
     }
 }

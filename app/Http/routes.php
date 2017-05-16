@@ -21,9 +21,13 @@ Route::get('/vehicule/list', 'VehiculeController@index');
 
 //Route::get('/agent/list', 'AgentController@index');
 
-Route::get('/vehicule/add', 'VehiculeController@addVehicule');
+Route::get('/vehicule/add', 'VehiculeController@addVehiculeInfos');
 
-Route::get('/agence/add', 'AgenceController@addAgency');
+Route::post('/vehicule/add', 'VehiculeController@addVehiculePost');
+
+Route::get('/agence/add', 'AgenceController@addAgencyInfos');
+
+Route::post('/agence/add', 'AgenceController@addAgencyPost');
 
 //Route::get('/agent/add', 'AgentController@addAgent');
 
