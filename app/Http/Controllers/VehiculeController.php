@@ -7,7 +7,7 @@ use App\Http\Requests;
 use App\Vehicule;
 use Illuminate\Http\Request;
 
-class AgenceController extends Controller
+class VehiculeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,17 +26,17 @@ class AgenceController extends Controller
      */
     public function index()
     {
-        $agences = Agence::all();
-        return view('nosAgences')->with("agences", $agences);
+        $vehicules = Vehicule::all();
+        return view('nosVehicules')->with("vehicules", $vehicules);
     }
 
-    public function showAgency($id)
+    public function showVehicule($id)
     {
-        return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => Vehicule::all()]);
+        return view('vehicule', ['vehicule' => Vehicule::findOrFail($id)]);
     }
 
-    public function addAgency()
+    public function addVehicule()
     {
-        return view('addAgence');
+        return view('addVehicule', ['agences' => Agence::all()]); //pass id agence
     }
 }

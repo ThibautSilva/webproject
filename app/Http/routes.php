@@ -15,8 +15,20 @@ Route::auth();
 
 Route::get('/', 'AgenceController@index');
 
-Route::get('/agences', 'AgenceController@index');
+Route::get('/agence/list', 'AgenceController@index');
 
-Route::get('/vehicules', 'VehiculeController@index');
+Route::get('/vehicule/list', 'VehiculeController@index');
+
+//Route::get('/agent/list', 'AgentController@index');
+
+Route::get('/vehicule/add', 'VehiculeController@addVehicule');
+
+Route::get('/agence/add', 'AgenceController@addAgency');
+
+//Route::get('/agent/add', 'AgentController@addAgent');
 
 Route::get('/agence/{id}', 'AgenceController@showAgency');
+
+Route::get('/vehicule/{id}', 'VehiculeController@showVehicule');
+
+//Route::get('/agent/{id}', 'AgentController@showAgent');

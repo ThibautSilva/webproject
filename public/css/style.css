@@ -201,17 +201,16 @@ span.glyphicon-user {
 
 .vehiculesAgence {
     margin-top: 8%;
-    border-radius: 5px;
-    border :1px solid #0097D8!important;
+    border-radius: 10px;
+    border :2px solid #0097D8!important;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 70%;
+
 }
 
 .infoAgence {
     display: flex;
-
 }
 
 
@@ -239,10 +238,9 @@ span.glyphicon-user {
 
 .infoVehicule {
     width: 33%;
-    height: 30%;
     text-align: center;
     align-items: center;
-    line-height: 100px;
+    line-height: 50px;
 }
 
 
@@ -263,11 +261,13 @@ span.glyphicon-user {
 }
 
 .divReserverVehicule {
-    margin-left: 42.5%;
-    margin-bottom: 2%;
+    margin: 2% 2% 0 42.5%;
 }
 
-
+.formAddVehicle {
+    width:40%;
+    margin: 0 30%;
+}
 
 @media screen and (max-width: 720px) {
 

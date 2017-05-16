@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="mesVehiculesAgences">
-                @foreach ($voitures as $voiture)
+                @foreach ($vehicules as $voiture)
                     <div class="vehiculesAgence">
                         <div class="photoVehicule">
                             {{ Html::image('images/' . $voiture->urlphoto, 'voiture', array('class' => 'photoVoiture')) }}
