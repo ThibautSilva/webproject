@@ -43,8 +43,9 @@
                     {{--Ajouter return view('nomVue');--}}
                     <li><a href="{{ url('agence/add') }}" class="btn" data-wipe="Ajouter une agence">Ajouter une agence</a></li>
                     <li><a href="{{ url('search') }}" class="btn" data-wipe="Rechercher">Rechercher</a></li>
-                    <li><a href="{{ url('agent/list') }}" class="btn" data-wipe="Nos agents">Nos agents</a></li>
-                    <li><a href="{{ url('/vehicule/add') }}" class="btn" data-wipe="Ajouter un véhicule">Ajouter un véhicule</a></li>
+                    {{--<li><a href="{{ url('agent/list') }}" class="btn" data-wipe="Nos agents">Nos agents</a></li>
+                    <li><a href="{{ url('/vehicule/add') }}" class="btn" data-wipe="Ajouter un véhicule">Ajouter un
+                            véhicule</a></li>--}}
                 </ul>
                 </div>
 
@@ -64,5 +65,7 @@
 @yield('ajoutVehicule')
 
 @yield('addAgence')
+
+@yield('vehicule')
 </body>
 </html>

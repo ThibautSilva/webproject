@@ -36,3 +36,9 @@ Route::get('/agence/{id}', 'AgenceController@showAgency');
 Route::get('/vehicule/{id}', 'VehiculeController@showVehicule');
 
 Route::get('/agent/{id}', 'AgentController@showAgent');
+
+
+Route::get('/vehicule', function()
+{
+    return view('vehicule');
+});

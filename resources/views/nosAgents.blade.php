@@ -4,7 +4,7 @@
 @section("content")
     <div class="container">
         <div class="formNosAgent">
-            {{ Html::image('images/home.png') }} 
+            {{ Html::image('images/home.png') }}
             <h1>NOS AGENTS</h1>
 
 

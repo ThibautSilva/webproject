@@ -55,10 +55,7 @@ a {
 .header {
     background: #0097D8;
     height: 120px;
-    top:0;
-    right: 0;
-    position: relative;
-    margin: 0;
+
 }
 
 
@@ -66,7 +63,6 @@ a {
 .header_bottom {
     background: #005DA8;
     height: 50px;
-    position: relative;
 }
 
 
@@ -97,14 +93,16 @@ ul {
 }
 
 #menu {
-    width: 100%;
+    position: relative;
     padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 ul li {
-    display:block;
+    display:flex;
     float:left;
-    width:25%;
     text-decoration:none;
     text-align:center;
     color: black;
@@ -123,11 +121,12 @@ span.glyphicon-user {
 .nosAgence {
     position: relative;
     width:100%;
-    height: auto;
+    height: 100%;
     margin-top: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .connection {
@@ -139,13 +138,12 @@ span.glyphicon-user {
 }
 
 .agence {
-    background-color: #0097D8;
     position: relative;
+    background-color: #0097D8;
     width: 250px;
     height: 350px;
     border-radius: 10px;
-    margin-right: 10%;
-    margin-bottom: 7%;
+    margin: 2% 5% 70px 5%;
 
 }
 
@@ -192,11 +190,16 @@ span.glyphicon-user {
 
 .monAgence {
     margin-top: 8%;
-    margin-right: 5%;
-    width: 30%;
+    margin-left: 5%;
+    width: 300px;
     height: 15%;
     display: inline-block;
     text-align: center;
+}
+
+.monAgence img {
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -219,13 +222,22 @@ span.glyphicon-user {
 }
 
 .infoAgence {
+    position: relative;
+    width:100%;
+    height: 100%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
 .mesVehiculesAgences {
     display: flex;
     flex-direction: column;
+    margin: 0 5%;
+    width: 50%;
+    height: auto;
 
 }
 .photoVoiture {
@@ -238,6 +250,12 @@ span.glyphicon-user {
 .photoVehicule {
     width:33%;
     float: left;
+}
+
+.photoVehicule img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
 }
 
 .recapInfoVehicule {
@@ -278,7 +296,47 @@ span.glyphicon-user {
     margin: 0 30%;
 }
 
-.formNosAgent {
+.resaVehicule {
+
+    position: relative;
+    width:100%;
+    height: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photoResaVehicule {
+    width: 30%;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.photoResaVehicule img {
+    width: 100%;
+    height: 100%;
+}
+.infoResaVehicule {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 10px;
+    border :2px solid #0097D8!important;
+    justify-content: space-around;
+    font-family: LeagueGothicReg;
+    font-size: 150%;
+    width: 700px;
+    margin-top: 3%;
+}
+
+.infoResaVehicule h1 {
+    text-align: center;
+}
+
+.infoResaVehicule p {
+    margin: 0 30% 0 30%;
 }
 
 @media screen and (max-width: 720px) {
