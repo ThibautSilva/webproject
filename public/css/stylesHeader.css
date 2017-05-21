@@ -2,7 +2,7 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;} body {line-height: 1;}ol, ul{list-style:none;} blockquote, q{quotes:none;} blockquote:before, blockquote:after, q:before, q:after{content:'';content:none;} :focus{outline:0;} ins{text-decoration:none;} del{text-decoration:line-through;} table{border-collapse:collapse; border-spacing:0;}
 
 /*MAIN*/
-body { 
+body {
 	font-size: 1.05em;
 	line-height: 1.25em;
 	font-family: Helvetica Neue, Helvetica, Arial;
@@ -49,7 +49,7 @@ header {
 	float: left;
 	width: 200px;
 	height: 40px;
-	background: url(../img/logo.png) no-repeat center;
+	background: url("../../public/images/logo2.png") no-repeat center;
 	display: block;
 
 }
@@ -57,16 +57,16 @@ header {
 nav {
 
 	float: right;
-	padding: 20px;	
-	
+	padding: 20px;
+
 }
 
 #menu-icon {
 
-	display: hidden;
+	display: none;
 	width: 40px;
 	height: 40px;
-	background: #4C8FEC url(../img/menu-icon.png) center;
+	background: #4C8FEC url("../../public/images/menu-icon.png") center;
 
 }
 
@@ -123,45 +123,46 @@ p {
 }
 
 /*MEDIA QUERY*/
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 800px) {
 
-	header {
+    header {
 
-		position: absolute;
+        position: absolute;
 
-	}
+    }
 
-	#menu-icon {
+    #menu-icon {
 
-		display:inline-block;
+        display: inline-block;
 
-	}
+    }
 
-	nav ul, nav:active ul { 
+    nav ul, nav:active ul {
 
-		display: none;
-		position: absolute;
-		padding: 20px;
-		background: #fff;
-		border: 5px solid #444;
-		right: 20px;
-		top: 60px;
-		width: 50%;
-		border-radius: 4px 0 4px 4px;
+        display: none;
+        position: absolute;
+        padding: 20px;
+        background: #fff;
+        border: 5px solid #444;
+        right: 20px;
+        top: 60px;
+        width: 50%;
+        border-radius: 4px 0 4px 4px;
 
-	}
+    }
 
-	nav li {
+    nav li {
 
-		text-align: center;
-		width: 100%;
-		padding: 10px 0;
-		margin: 0;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+        margin: 0;
 
-	}
+    }
 
-	nav:hover ul {
+    nav:hover ul {
 
-		display: block;
+        display: block;
 
-	}
+    }
+}
