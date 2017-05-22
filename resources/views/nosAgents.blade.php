@@ -24,9 +24,25 @@
                 </thead>
 
 
-                {{--@foreach ($agents as $agent)
-                @endforeach--}}
+                @foreach ($agents as $agent)
                 <tr>
+                    <td>{{$agent->id}}</td>
+                    <td>{{$agent->name}}</td>
+                    <td>{{$agent->firstname}}</td>
+                    <td>{{$agent->phone}}</td>
+                    <td>{{$agent->mobile}}</td>
+                    <td>{{$agent->fax}}</td>
+                    <td>{{$agent->email}}</td>
+                    <td>{{$agent->password}}</td>
+                    <td>
+                        <div class="form-group">
+                            {!! Form::checkbox ('admin', 1, ['class' =>'form-control']) !!}
+
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+              {{--  <tr>
                     <td>1</td>
                     <td>FASSEY</td>
                     <td>Valentin</td>
@@ -75,7 +91,7 @@
 
                         </div>
                     </td>
-                </tr>
+                </tr>--}}
 
             </table>
         </div>

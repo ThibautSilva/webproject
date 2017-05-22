@@ -32,7 +32,7 @@ class AgenceController extends Controller
 
     public function showAgency($id)
     {
-        return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => Vehicule::all()]);
+        return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => Vehicule::all(), 'actualAgency' => $id]);
     }
 
     public function addAgencyInfos()
@@ -46,6 +46,7 @@ class AgenceController extends Controller
         $agency->nom = $request->input('nom');
         $agency->adresse = $request->input('adresse');
         $agency->telephone = $request->input('telephone');
+        $agency->fax = $request->input('fax');
         $agency->save();
         return view('agence', ['agence' => Agence::findOrFail($agency->id), 'vehicules' => Vehicule::all()]);
     }

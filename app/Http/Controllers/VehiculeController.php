@@ -37,7 +37,13 @@ class VehiculeController extends Controller
 
     public function addVehiculeInfos()
     {
-        return view('addVehicule', ['agences' => Agence::all()]); //pass id agence
+        $agences = Agence::all();
+        $agencesLabel = array();
+        foreach ($agences as $div)
+        {
+            $agencesLabel[] = $div->nom ;
+        }
+        return view('addVehicule', ['agences' => $agencesLabel]); //pass id agence
     }
 
     public function addVehiculePost(Requests\AddVehiculeRequest $request)
