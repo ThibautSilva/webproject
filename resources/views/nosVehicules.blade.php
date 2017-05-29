@@ -1,4 +1,4 @@
-@section("nosVehicules")
+@section("nosVehicule")
 
     @foreach ($vehicules as $voiture)
         <div class="vehiculesAgence">
