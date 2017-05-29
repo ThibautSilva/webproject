@@ -32,7 +32,7 @@ class SearchController extends Controller
         $statusLabel = array();
         foreach ($statuts as $div)
         {
-            $statusLabel[] = $div->nom ;
+            $statusLabel[] = $div->name ;
         }
         return view('search', ['agencesLabel' => $agencesLabel, 'statuts' => $statusLabel]);
     }
@@ -40,6 +40,7 @@ class SearchController extends Controller
     public function search(Requests\AddVehiculeRequest $request)
     {
         var_dump($request);
+        return view('agences');
         /*$vehicule = new Vehicule;
         $vehicule->modele = $request->input('marque');
         $destination = 'images/'; // your upload folder
