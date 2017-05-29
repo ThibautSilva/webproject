@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Agence;
 use App\Http\Requests;
+use App\Status;
 use App\Vehicule;
 use Illuminate\Http\Request;
 
@@ -21,22 +22,25 @@ class SearchController extends Controller
 
     public function displaySearch()
     {
-        return view('search');
+        $agences = Agence::all();
+        $agencesLabel = array();
+        foreach ($agences as $div)
+        {
+            $agencesLabel[] = $div->nom ;
+        }
+        $statuts = Status::all();
+        $statusLabel = array();
+        foreach ($statuts as $div)
+        {
+            $statusLabel[] = $div->nom ;
+        }
+        return view('search', ['agencesLabel' => $agencesLabel, 'statuts' => $statusLabel]);
     }
 
     public function search(Requests\AddVehiculeRequest $request)
     {
-        $type = $request->input('type');
-        switch($type)
-        {
-            case 'agence' :
-
-                break;
-            case 'vehicule' :
-
-                break;
-        }
-        $vehicule = new Vehicule;
+        var_dump($request);
+        /*$vehicule = new Vehicule;
         $vehicule->modele = $request->input('marque');
         $destination = 'images/'; // your upload folder
         $image = $request->file('photo');
@@ -49,6 +53,6 @@ class SearchController extends Controller
             $vehicule->photo_id = $photo->id;
         }
         $vehicule->save();
-        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id)]);
+        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id)]);*/
     }
 }

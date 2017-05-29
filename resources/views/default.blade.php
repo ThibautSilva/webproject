@@ -98,5 +98,7 @@
 
 @yield('contactSupport')
 
+@yield('recherche')
+
 </body>
 </html>
