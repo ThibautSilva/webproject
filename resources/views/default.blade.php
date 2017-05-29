@@ -9,6 +9,9 @@
 
     <link rel="stylesheet" type="text/css" href="{{url('/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('/css/style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{url('/js/monJQuery.js')}}"></script>
+
     <link rel="icon" href="{{ url('/images/logo.png')}}">
 
 </head>
