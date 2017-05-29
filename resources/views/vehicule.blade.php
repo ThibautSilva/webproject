@@ -13,7 +13,7 @@
                 <div class="formAddVehicle">
                     <h1>Citroen C3</h1>
                     <p>Année de production : 2003</p>
-                    <p>longueur : 2 m</p>
+                    <p>Longueur : 2 m</p>
                     <p>Largeur : 2 m</p>
                     <p>Poid : 958 kg</p>
                     <p>Puissance : 90 CV</p>
@@ -32,8 +32,8 @@
 
                     <div class="form-group">
 
-                        {!! Form::label('title', 'Agence') !!}
-                        {!! Form::select ('agence', $agences, '', ['class' =>'form-control']) !!}
+                        {!! Form::label('title', 'Statut') !!}
+                        {!! Form::select ('agence', $statut, '', ['class' =>'form-control']) !!}
 
                     </div>
 
