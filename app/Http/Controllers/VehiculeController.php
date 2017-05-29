@@ -50,6 +50,16 @@ class VehiculeController extends Controller
     {
         $vehicule = new Vehicule;
         $vehicule->modele = $request->input('marque');
+        $destination = 'images/'; // your upload folder
+        $image = $request->file('photo');
+        if(isset($image)) {
+            $filename = $image->getClientOriginalName(); // get the filename
+            $image->move($destination, $filename); // move file to destination
+            $photo = new Photo;
+            $photo->urlphoto = $filename;
+            $photo->save();
+            $vehicule->photo_id = $photo->id;
+        }
         $vehicule->save();
         return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id)]);
     }
