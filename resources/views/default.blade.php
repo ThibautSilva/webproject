@@ -32,10 +32,7 @@
             @if (Auth::check())
                 <div class="col-xs-4 col-sm-4">
                     <div class="deconnexion">
-                        <span class="glyphicon glyphicon-user"><br><a href="{{ url('/logout') }}">Déconnecter</a></span>
-                    </div>
-                    <div class="icoDisconnect">
-                        <a href="{{ url('/') }}">{{ Html::image('images/power.png', 'a picture') }}</a>
+                        <a href="{{ url('/logout') }}"><span class="glyphicon glyphicon-off"></span><br>DECONNEXION</a>
                     </div>
                 </div>
             @endif
@@ -74,6 +71,7 @@
                     <li><a href="{{ url('agent/list') }}">Nos agents</a></li>
                     <li><a href="{{ url('/vehicule/add') }}">Ajouter un véhicule</a></li>
                     <li><a href="{{ url('/vehicule/add') }}">Contacter le support</a></li>
+                    <li class="decoMobile"><a href="{{ url('/logout') }}">Déconnexion</a></li>
 
                 </ul>
 
