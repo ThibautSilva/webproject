@@ -70,7 +70,7 @@
                     <li><a href="{{ url('search') }}">Rechercher</a></li>
                     <li><a href="{{ url('agent/list') }}">Nos agents</a></li>
                     <li><a href="{{ url('/vehicule/add') }}">Ajouter un véhicule</a></li>
-                    <li><a href="{{ url('/vehicule/add') }}">Contacter le support</a></li>
+                    <li><a href="{{ url('/support') }}">Contacter le support</a></li>
                     <li class="decoMobile"><a href="{{ url('/logout') }}">Déconnexion</a></li>
 
                 </ul>
@@ -95,5 +95,8 @@
 @yield('addAgence')
 
 @yield('vehicule')
+
+@yield('contactSupport')
+
 </body>
 </html>
