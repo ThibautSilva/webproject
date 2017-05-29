@@ -73,10 +73,11 @@
             {!! Form::submit('envoyer') !!}
 
             {{--<button class="btn btn-primary">Envoyer</button>--}}
+
+
+
+            {!! Form::close() !!}
         </div>
-
-
-        {!! Form::close() !!}
 
 
     </div>

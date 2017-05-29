@@ -3,10 +3,8 @@
 
 @section("content")
     <div class="container">
-        <div class="formNosAgent">
-            {{ Html::image('images/home.png') }}
-            <h1>NOS AGENTS</h1>
-
+        {{ Html::image('images/home.png') }}
+        <h1>NOS AGENTS</h1>
 
 
         <div class="nosAgents" id="rounded-corner">
@@ -95,9 +93,6 @@
 
             </table>
         </div>
-
-
-    </div>
     </div>
 
 
