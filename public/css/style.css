@@ -34,10 +34,7 @@ h1 {
 .titleForm {
     margin-bottom: 4% ;
     position: relative;
-    width: 800px;
-    height: 71px;
     display: inline-block;
-    margin-top: 20px;
 }
 
 .title img {
@@ -87,7 +84,6 @@ h1 {
 .icoDisconnect {
     display: none;
 }
-
 
 
 
@@ -282,7 +278,7 @@ span.glyphicon-off a {
 
 .formAddVehicle {
     width:40%;
-    margin: 0 30% 10% 30%;
+    margin: 0 30% 2% 30%;
 
 }
 
@@ -306,7 +302,6 @@ span.glyphicon-off a {
 
 .photoResaVehicule img {
     width: 100%;
-    height: 100%;
 }
 .infoResaVehicule {
     display: flex;
@@ -325,9 +320,7 @@ span.glyphicon-off a {
     text-align: center;
 }
 
-.infoResaVehicule p {
-    margin: 0 30% 0 30%;
-}
+
 
 
 /*TEST INDEX*/
@@ -335,7 +328,6 @@ span.glyphicon-off a {
 header {
 
     width: 100%;
-    height: 76px;
     z-index: 100;
 
 }
@@ -354,12 +346,7 @@ a:hover {
 
 }
 nav {
-
-    float: right;
     padding: 8px;
-
-    margin-bottom: 2%;
-
 }
 
 #menu-icon {
@@ -381,15 +368,20 @@ a:hover#menu-icon {
 ul {
 
     list-style: none;
+    text-align: center;
 
 }
 
 li {
 
-    display: inline-block;
-    float: left;
+
     padding: 10px;
 
+
+    display:inline-block;
+    *display:inline; /*IE7*/
+    *zoom:1; /*IE7*/
+    margin-right:10px;
 }
 
 .current {
@@ -419,13 +411,14 @@ h1 {
 p {
 
     line-height: 1.45em;
-    margin-bottom: 20px;
 
 }
 
 .decoMobile {
     display: none;
 }
+
+
 
 
 @media only screen and (max-width : 800px) {
@@ -479,9 +472,7 @@ p {
         height: auto;
     }
 
-    .infoResaVehicule p {
-        margin: 0 20% 0 20%;
-    }
+
 
     .header_tittle {
         z-index: 0;
@@ -497,6 +488,12 @@ p {
     .decoMobile {
         display: block;
     }
+
+    .formAddVehicle {
+        width: 80%;
+        margin : 10%;
+    }
+
 
 
 }

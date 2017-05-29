@@ -42,7 +42,7 @@ Route::get('/recherche/', 'SearchController@displaySearch');
 Route::post('/recherche/', 'SearchController@search');
 
 
-    Route::get('/test', function()
+    Route::get('/support', function()
     {
-        return view('testHeader');
+        return view('contactSupport');
     });

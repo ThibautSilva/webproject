@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Agence;
 use App\Http\Requests;
+use App\Status;
 use App\Vehicule;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,15 @@ class VehiculeController extends Controller
 
     public function showVehicule($id)
     {
-        return view('vehicule', ['vehicule' => Vehicule::findOrFail($id)]);
+        $statut = Status::all();
+        $statutLabel = array();
+        foreach ($statut as $div)
+        {
+            $statutLabel[] = $div->name ;
+        }
+
+
+        return view('vehicule', ['vehicule' => Vehicule::findOrFail($id), 'statut' => $statutLabel]);
     }
 
     public function addVehiculeInfos()
@@ -43,6 +52,8 @@ class VehiculeController extends Controller
         {
             $agencesLabel[] = $div->nom ;
         }
+
+
         return view('addVehicule', ['agences' => $agencesLabel]); //pass id agence
     }
 

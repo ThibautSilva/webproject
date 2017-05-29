@@ -15,12 +15,12 @@
                     </div>
                     <div class="titreAgence">{{$agence->nom}}</div>
                     <div class="adresseAgence">{{$agence->adresse}}</div>
-                    <div class="divButtonVoir"><a href="{{ url('/agence/' . $agence->id) }}" ><button class="buttonVoir" >{{ Html::image('images/eye.png') }}Voir</button></a></div>
+                    <div class="divButtonVoir"><a href="{{ url('/agence/' . $agence->id) }}">
+                            <button class="buttonVoir">{{ Html::image('images/eye.png') }}Voir</button>
+                        </a></div>
                 </div>
             @endforeach
         </div>
-
-
 
 
     </div>
