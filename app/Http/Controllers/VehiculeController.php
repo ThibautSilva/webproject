@@ -37,13 +37,29 @@ class VehiculeController extends Controller
 
     public function addVehiculeInfos()
     {
-        return view('addVehicule', ['agences' => Agence::all()]); //pass id agence
+        $agences = Agence::all();
+        $agencesLabel = array();
+        foreach ($agences as $div)
+        {
+            $agencesLabel[] = $div->nom ;
+        }
+        return view('addVehicule', ['agences' => $agencesLabel]); //pass id agence
     }
 
     public function addVehiculePost(Requests\AddVehiculeRequest $request)
     {
         $vehicule = new Vehicule;
         $vehicule->modele = $request->input('marque');
+        $destination = 'images/'; // your upload folder
+        $image = $request->file('photo');
+        if(isset($image)) {
+            $filename = $image->getClientOriginalName(); // get the filename
+            $image->move($destination, $filename); // move file to destination
+            $photo = new Photo;
+            $photo->urlphoto = $filename;
+            $photo->save();
+            $vehicule->photo_id = $photo->id;
+        }
         $vehicule->save();
         return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id)]);
     }

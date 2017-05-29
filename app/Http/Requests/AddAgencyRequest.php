@@ -26,7 +26,8 @@ class AddAgencyRequest extends Request
         return [
             'nom' => 'required',
             'adresse' => 'required',
-            'telephone' => 'required'
+            'telephone' => 'required',
+            'photo' => 'image'
         ];
     }
 }

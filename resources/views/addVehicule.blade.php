@@ -7,7 +7,7 @@
             <div class="titleForm">
                 <h1>Ajouter un véhicule</h1>
             </div>
-            {!! Form::open(['method' => 'post']) !!}
+            {!! Form::open(['method' => 'post', 'files'=>true]) !!}
             <div class="form-group">
 
                 {!! Form::label('title', 'Marque / Modèle *') !!}

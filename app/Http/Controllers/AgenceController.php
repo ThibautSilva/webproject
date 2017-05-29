@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Agence;
 use App\Http\Requests;
+use App\Photo;
 use App\Vehicule;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,7 @@ class AgenceController extends Controller
 
     public function showAgency($id)
     {
-        return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => Vehicule::all()]);
+        return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => Vehicule::all(), 'actualAgency' => $id]);
     }
 
     public function addAgencyInfos()
@@ -46,6 +47,17 @@ class AgenceController extends Controller
         $agency->nom = $request->input('nom');
         $agency->adresse = $request->input('adresse');
         $agency->telephone = $request->input('telephone');
+        $agency->fax = $request->input('fax');
+        $destination = 'images/'; // your upload folder
+        $image = $request->file('photo');
+        if(isset($image)) {
+            $filename = $image->getClientOriginalName(); // get the filename
+            $image->move($destination, $filename); // move file to destination
+            $photo = new Photo;
+            $photo->urlphoto = $filename;
+            $photo->save();
+            $agency->photo_id = $photo->id;
+        }
         $agency->save();
         return view('agence', ['agence' => Agence::findOrFail($agency->id), 'vehicules' => Vehicule::all()]);
     }

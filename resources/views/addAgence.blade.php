@@ -8,7 +8,7 @@
             <div class="titleForm">
                 <h1>Ajouter une agence</h1>
             </div>
-            {!! Form::open(['method' => 'post']) !!}
+            {!! Form::open(['method' => 'post', 'files'=>true]) !!}
             <div class="form-group">
 
                 {!! Form::label('title', 'Nom *') !!}
@@ -44,7 +44,7 @@
             <div class="form-group">
 
                 {!! Form::label('title', 'Photo de l\'agence') !!}
-                {!! Form::file ('urlphoto', '', ['class' =>'form-control']) !!}
+                {!! Form::file ('photo', '', ['class' =>'form-control']) !!}
                 {!! $errors->first('photo', '<small class="help-block">:message</small>') !!}
 
             </div>

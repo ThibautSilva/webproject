@@ -1,0 +1,52 @@
+INSERT INTO public.statut(
+	name)
+	VALUES ('en location');
+INSERT INTO public.statut(
+	name)
+	VALUES ('en stock');
+INSERT INTO public.statut(
+	name)
+	VALUES ('en démonstration');
+INSERT INTO public.statut(
+	name)
+	VALUES ('en prêt');
+
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('voiture.png');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('voiture2.png');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('agence.jpg');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('agence2.jpg');
+
+INSERT INTO public.agence(
+	nom, adresse, telephone, fax, photo_id)
+	VALUES ('agence', '5 avenue', '06484848', '055545545', 3);
+INSERT INTO public.agence(
+	nom, adresse, telephone, fax, photo_id)
+	VALUES ('agence', '5 avenue', '06484848', '055545545', 4);
+
+INSERT INTO public.vehicule(
+	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
+	VALUES ('citroen', '12/08/2012', '168', '124', '2500', '5', 1, 1, 1);
+INSERT INTO public.vehicule(
+	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
+	VALUES ('renault', '19/02/2013', '168', '124', '2500', '5', 2, 1, 2);
+INSERT INTO public.vehicule(
+	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
+	VALUES ('citroen c4', '12/08/2012', '168', '124', '2500', '5', 1, 1, 3);
+
+INSERT INTO public.users(
+    name, firstname, email, password, phone, admin)
+    VALUES ('Valentin', 'Fassey', 'valentin.fassey@viacesi.fr', '$2y$10$I/egw2bqdv77DsImPLaYNOKlTKswxiKA6kFxWXi0q4RN25Pgvw3ES', '81594', true);
+INSERT INTO public.users(
+    name, firstname, email, password, phone, admin)
+    VALUES ('Thibaut', 'Silva', 'thibaut.silva@viacesi.fr', '$2y$10$I/egw2bqdv77DsImPLaYNOKlTKswxiKA6kFxWXi0q4RN25Pgvw3ES', '81594', true);
+INSERT INTO public.users(
+    name, firstname, email, password, phone, admin, agence_id)
+    VALUES ('Jean', 'Michel', 'jean.michel@viacesi.fr', '$2y$10$I/egw2bqdv77DsImPLaYNOKlTKswxiKA6kFxWXi0q4RN25Pgvw3ES', '81594', false, 2);

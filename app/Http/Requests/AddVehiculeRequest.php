@@ -24,7 +24,8 @@ class AddVehiculeRequest extends Request
     public function rules()
     {
         return [
-            'marque' => 'required'
+            'marque' => 'required',
+            'photo' => 'image'
         ];
     }
 }

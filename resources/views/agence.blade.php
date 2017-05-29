@@ -33,6 +33,7 @@
                             <div class="infoVehicule">900Kg</div>
                         </div>
                         <div class="divReserverVehicule"><button class="btn btn-primary btnReserverVehicule">Choisir ce véhicule</button></div>
+                        {{--<div class="divReserverVehicule"><a href="{{ url('/vehicule/' . $voiture->id) }}" ><button class="btn btn-primary btnReserverVehicule">Choisir ce véhicule</button></a></div>--}}
                     </div>
 
                     <div class="vehiculesAgence">
