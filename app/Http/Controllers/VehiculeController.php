@@ -112,7 +112,7 @@ class VehiculeController extends Controller
         $vehicule->delete();
         $vehicules = Vehicule::where('agence_id', $id)
             ->get();
-        $photo = Photo::findOrFail(Agence::findOrFail($id)->photo_id);
-        return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => $vehicules, 'actualAgency' => $id, 'photo' => $photo]);
+        $photo = Photo::findOrFail(Agence::findOrFail($agence)->photo_id);
+        return view('agence', ['agence' => Agence::findOrFail($agence), 'vehicules' => $vehicules, 'actualAgency' => $id, 'photo' => $photo]);
     }
 }
