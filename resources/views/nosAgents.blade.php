@@ -3,14 +3,15 @@
 
 @section("content")
     <div class="container">
-        {{ Html::image('images/home.png') }}
-        <h1>NOS AGENTS</h1>
+        <div class="title">
+            {{ Html::image('images/nosAgent.png') }}
+            <h1>NOS AGENTS</h1>
+        </div>
 
         <div class="nosAgent">
             @foreach ($agents as $agent)
                 <div class="monAgent">
 
-                    <p>Id : {{$agent->id}}</p>
                     <p>Nom : {{$agent->name}}</p>
                     <p>Prénom : {{$agent->firstname}}</p>
                     <p>Téléphone : {{$agent->phone}}</p>

@@ -37,9 +37,9 @@ Route::get('/vehicule/{id}', 'VehiculeController@showVehicule');
 
 Route::get('/agent/{id}', 'AgentController@showAgent');
 
-Route::get('/recherche/', 'SearchController@displaySearch');
+Route::get('/search', 'SearchController@displaySearch');
 
-Route::post('/recherche/', 'SearchController@search');
+Route::post('/search', 'SearchController@search');
 
 
     Route::get('/support', function()

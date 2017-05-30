@@ -75,6 +75,7 @@
                     <li><a href="{{ url('/vehicule/add') }}">Ajouter un véhicule</a></li>
                     <li><a href="{{ url('/support') }}">Contacter le support</a></li>
                     <li class="decoMobile"><a href="{{ url('/logout') }}">Déconnexion</a></li>
+                    <li><a href="{{ url('/history') }}">Historique</a></li>
 
                 </ul>
 
@@ -100,6 +101,8 @@
 @yield('vehicule')
 
 @yield('contactSupport')
+
+@yield('recherche')
 
 </body>
 </html>
