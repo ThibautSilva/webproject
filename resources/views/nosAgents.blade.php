@@ -3,14 +3,15 @@
 
 @section("content")
     <div class="container">
-        {{ Html::image('images/home.png') }}
-        <h1>NOS AGENTS</h1>
+        <div class="title">
+            {{ Html::image('images/nosAgent.png') }}
+            <h1>NOS AGENTS</h1>
+        </div>
 
         <div class="nosAgent">
             @foreach ($agents as $agent)
                 <div class="monAgent">
 
-                    <p>Id : {{$agent->id}}</p>
                     <p>Nom : {{$agent->name}}</p>
                     <p>Prénom : {{$agent->firstname}}</p>
                     <p>Téléphone : {{$agent->phone}}</p>
@@ -19,8 +20,12 @@
                     <p>Email : {{$agent->email}}</p>
                     <div class="form-group">
                         {!! Form::label('title', 'Admin ') !!}
-                        {!! Form::checkbox ('admin', 1, ['class' =>'form-control']) !!}
-
+                        @if($agent->admin)
+                            {!! Form::checkbox ('admin', 1, ['class' =>'form-control']) !!}
+                        @endif
+                        @if(!$agent->admin)
+                            {!! Form::checkbox ('admin', 0, ['class' =>'form-control']) !!}
+                        @endif
                     </div>
                 </div>
             @endforeach

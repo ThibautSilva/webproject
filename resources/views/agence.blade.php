@@ -28,10 +28,10 @@
                         <div class="recapInfoVehicule">
                             <div class="infoVehicule">{{$voiture->modele}}</div>
                             <div class="infoVehicule">{{$voiture->datefabrication}}</div>
-                            <div class="infoVehicule">{{$voiture->puissance}}</div>
-                            <div class="infoVehicule">{{$voiture->hauteur}}</div>
-                            <div class="infoVehicule">{{$voiture->largeur}}</div>
-                            <div class="infoVehicule">{{$voiture->poids}}</div>
+                            <div class="infoVehicule">{{$voiture->puissance}} CV</div>
+                            <div class="infoVehicule"><b>Hauteur :</b>{{$voiture->hauteur}} M</div>
+                            <div class="infoVehicule"><b>Largeur :</b>{{$voiture->largeur}} M</div>
+                            <div class="infoVehicule">{{$voiture->poids}} Kg</div>
                         </div>
       {{--                  <div class="divReserverVehicule">
                             <button class="btn btn-primary btnReserverVehicule">Choisir ce véhicule</button>

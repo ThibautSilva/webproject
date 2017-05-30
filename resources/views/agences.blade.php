@@ -1,11 +1,12 @@
 @section("content")
     <div class="container">
-        <div class="title">
-            {{ Html::image('images/home.png') }}
-            <h1>NOS AGENCES</h1>
-        </div>
-        <div class="nosAgence">
-            @if(isset($agences))
+
+        @if(isset($agences))
+            <div class="title">
+                {{ Html::image('images/home.png') }}
+                <h1>NOS AGENCES</h1>
+            </div>
+            <div class="nosAgence">
                 @foreach ($agences as $agence)
                     <div class="agence">
                         <div class="divPhotoAgence">
@@ -18,8 +19,8 @@
                             </a></div>
                     </div>
                 @endforeach
-            @endif
-        </div>
+                @endif
+            </div>
 
 
     </div>

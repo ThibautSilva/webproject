@@ -449,25 +449,37 @@ p {
     background-color: lightgrey;
     margin: 5%;
     border-radius: 5%;
-    width: 30%;
-    height: 40%;
-    text-align: center
-
-
-
+    text-align: center;
+    width: 250px;
 
 }
 
 .nosAgent {
-    position: relative;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     height: 100%;
 
+}
 
+.formSearch {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.critere {
+    margin: 2%;
+}
+
+.monAgent p {
+    font-family: LeagueGothicReg;
+    font-size: 1.2em;
 }
 @media only screen and (max-width : 800px) {
 
@@ -511,6 +523,14 @@ p {
 
     }
 
+
+
+
+
+
+
+
+
     .mesVehiculesAgences {
         display: flex;
         flex-direction: column;
@@ -545,69 +565,6 @@ p {
 
 }
 
-/*FIN TEST INDEX*/
-#rounded-corner
-{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    font-size: 14px;
-/	margin: 0px;
-    margin-left:auto;
-    margin-right:auto;
-/	width: 480px;
-/	text-align: center;
-    border-collapse: collapse;
-    margin-top : 4%;
-}
-#rounded-corner thead th.hg
-{
-/	background: #a6a6a6 url('table-images/left.png') left -1px no-repeat;
-    border-radius:10px 0 0 0;
-}
-#rounded-corner thead th.hd
-{
-/	background: #a6a6a6 url('table-images/right.png') right -1px no-repeat;
-    border-radius:0 10px 0 0;
-}
-#rounded-corner th
-{
-    padding: 8px;
-    font-weight: normal;
-    font-size: 15px;
-    color: #3b3b3b;
-    background: #ACD0F9;
-}
-#rounded-corner td
-{
-    padding: 8px;
-    background: #efefef;
-    border-top: 1px solid #fff;
-    color: #3b3b3b;
-}
-#rounded-corner tfoot td.rounded-foot-left
-{
-/	background: #efefef url('table-images/botleft.png') left bottom no-repeat;
-    border-radius:0 0 0 10px;
-    font-size: 10pt;
-    font-style: italic;
-    color: grey;
-}
-#rounded-corner tfoot td.rounded-foot-right
-{
-/	background: #efefef url('table-images/botright.png') right bottom no-repeat;
-    border-radius:0 0 10px 0;
-}
-#rounded-corner tfoot td.footer
-{
-/	background: #efefef url('table-images/botleft.png') left bottom no-repeat;
-    border-radius:0 0 10px 10px;
-    font-size: 10pt;
-    font-style: italic;
-    color: grey;
-}
-#rounded-corner tbody tr:hover td
-{
-    background: #d0dafd;
-}
 
 
 
