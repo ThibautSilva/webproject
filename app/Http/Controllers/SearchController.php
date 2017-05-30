@@ -34,26 +34,31 @@ class SearchController extends Controller
         {
             $statusLabel[] = $div->name ;
         }
-        return view('search', ['agencesLabel' => $agencesLabel, 'statuts' => $statusLabel, 'agences' => $agences, 'vehicules' => Vehicule::all()]);
+        return view('search', ['agencesLabel' => $agencesLabel, 'statuts' => $statusLabel, 'agences' => $agences, 'vehicules' => Vehicule::all(), 'selectedagence' => 0]);
     }
 
     public function search(Requests\SearchRequest $request)
     {
-        var_dump($request);
-        return view('agences');
-        /*$vehicule = new Vehicule;
-        $vehicule->modele = $request->input('marque');
-        $destination = 'images/'; // your upload folder
-        $image = $request->file('photo');
-        if(isset($image)) {
-            $filename = $image->getClientOriginalName(); // get the filename
-            $image->move($destination, $filename); // move file to destination
-            $photo = new Photo;
-            $photo->urlphoto = $filename;
-            $photo->save();
-            $vehicule->photo_id = $photo->id;
+        $agenceid = $request->input('agence');
+        if ($agenceid != 0) {
+            $vehicules =Vehicule::where('agence_id', $agenceid)
+                ->get();
+        } else {
+            $vehicules = Vehicule::all();
         }
-        $vehicule->save();
-        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id)]);*/
+        $agences = Agence::all();
+        $agencesLabel = array();
+        foreach ($agences as $div)
+        {
+            $agencesLabel[] = $div->nom ;
+        }
+        $statuts = Status::all();
+        $statusLabel = array();
+        foreach ($statuts as $div)
+        {
+            $statusLabel[] = $div->name ;
+        }
+        $selectedagence = $request->input('agence');
+        return view('search', ['agencesLabel' => $agencesLabel, 'statuts' => $statusLabel, 'agences' => $agences, 'vehicules' => $vehicules, 'selectedagence' => $selectedagence]);
     }
 }

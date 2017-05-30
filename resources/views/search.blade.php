@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <div class="critere">
                         {!! Form::label('title', 'Agence') !!}
-                        {!! Form::select ('agence', [0=>'Toutes les agences'] + $agencesLabel, '', ['class' =>'form-control']) !!}
+                        {!! Form::select ('agence', [0=>'Toutes les agences'] + $agencesLabel, $selectedagence, ['class' =>'form-control']) !!}
                     </div>
                 </div>
                 <div class="form-group">
