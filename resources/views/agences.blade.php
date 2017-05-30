@@ -10,7 +10,7 @@
                 @foreach ($agences as $agence)
                     <div class="agence">
                         <div class="divPhotoAgence">
-                            {{ Html::image('images/agence.jpg', 'a picture', array('class' => 'photoAgence')) }}
+                            {{ Html::image($agence->photo_id, 'a picture', array('class' => 'photoAgence')) }}
                         </div>
                         <div class="titreAgence">{{$agence->nom}}</div>
                         <div class="adresseAgence">{{$agence->adresse}}</div>
