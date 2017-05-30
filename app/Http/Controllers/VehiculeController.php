@@ -36,9 +36,8 @@ class VehiculeController extends Controller
     {
         $statut = Status::all();
         $statutLabel = array();
-        foreach ($statut as $div)
-        {
-            $statutLabel[] = $div->name ;
+        foreach ($statut as $div) {
+            $statutLabel[] = $div->name;
         }
         return view('vehicule', ['vehicule' => Vehicule::findOrFail($id), 'statut' => $statutLabel]);
     }
@@ -48,9 +47,8 @@ class VehiculeController extends Controller
     {
         $agences = Agence::all();
         $agencesLabel = array();
-        foreach ($agences as $div)
-        {
-            $agencesLabel[] = $div->nom ;
+        foreach ($agences as $div) {
+            $agencesLabel[] = $div->nom;
         }
 
 
@@ -66,15 +64,11 @@ class VehiculeController extends Controller
         $vehicule->largeur = $request->input('largeur');
         $vehicule->poids = $request->input('poid');
         $vehicule->puissance = $request->input('puissanceCV');
-        if ($request->input('agence') == 0){
-            $vehicule->agence_id = 1;
-        } else {
-            $vehicule->agence_id = $request->input('agence');
-        }
+        $vehicule->agence_id = $request->input('agence') + 1;
         $vehicule->statut_id = 2;
         $destination = 'images/'; // your upload folder
         $image = $request->file('photo');
-        if(isset($image)) {
+        if (isset($image)) {
             $filename = $image->getClientOriginalName(); // get the filename
             $image->move($destination, $filename); // move file to destination
             $photo = new Photo;
@@ -85,9 +79,8 @@ class VehiculeController extends Controller
         $vehicule->save();
         $statut = Status::all();
         $statutLabel = array();
-        foreach ($statut as $div)
-        {
-            $statutLabel[] = $div->name ;
+        foreach ($statut as $div) {
+            $statutLabel[] = $div->name;
         }
         return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id), 'statut' => $statutLabel]);
     }
@@ -104,16 +97,14 @@ class VehiculeController extends Controller
         $vehicule->save();
         $statut = Status::all();
         $statutLabel = array();
-        foreach ($statut as $div)
-        {
-            $statutLabel[] = $div->name ;
+        foreach ($statut as $div) {
+            $statutLabel[] = $div->name;
         }
         return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id), 'statut' => $statutLabel]);
-
-       // return redirect('vehicule/'.$request->input('idvoiture'));
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $vehicule = Vehicule::findOrFail($id);
         $agence = $vehicule->agence_id;
         $vehicule->delete();
