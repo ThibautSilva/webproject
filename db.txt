@@ -1,4 +1,4 @@
-INSERT INTO public.statut(
+﻿INSERT INTO public.statut(
 	name)
 	VALUES ('en stock');
 INSERT INTO public.statut(
@@ -13,33 +13,93 @@ INSERT INTO public.statut(
 
 INSERT INTO public.photo(
     urlphoto)
+    VALUES ('agence.jpg');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('agence2.jpg');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('agence3.jpg');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('agence4.jpg');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('agence5.jpg');
+
+INSERT INTO public.photo(
+    urlphoto)
     VALUES ('voiture.png');
 INSERT INTO public.photo(
     urlphoto)
     VALUES ('voiture2.png');
 INSERT INTO public.photo(
     urlphoto)
-    VALUES ('agence.jpg');
+    VALUES ('voiture3.png');
 INSERT INTO public.photo(
     urlphoto)
-    VALUES ('agence2.jpg');
+    VALUES ('voiture4.png');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('voiture5.png');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('voiture6.png');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('voiture7.png');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('voiture8.png');
+INSERT INTO public.photo(
+    urlphoto)
+    VALUES ('voiture9.png');
+
 
 INSERT INTO public.agence(
 	nom, adresse, telephone, fax, photo_id)
-	VALUES ('agence', '5 avenue', '06484848', '055545545', 3);
+	VALUES ('Nancy', '5 avenue foch', '0325784512', '055545545', 1);
 INSERT INTO public.agence(
 	nom, adresse, telephone, fax, photo_id)
-	VALUES ('agence', '5 avenue', '06484848', '055545545', 4);
+	VALUES ('Metz', '105 rue de strasbourg', '0365987415', '055545574', 2);
+INSERT INTO public.agence(
+	nom, adresse, telephone, fax, photo_id)
+	VALUES ('Marseille', '85 avenue des éturbées', '0412987415', '055565574', 3);
+INSERT INTO public.agence(
+	nom, adresse, telephone, fax, photo_id)
+	VALUES ('Paris', '125 boulevard lothaire', '0365567415', '055545574', 4);
+INSERT INTO public.agence(
+	nom, adresse, telephone, fax, photo_id)
+	VALUES ('Nante', '8 rue du marechal', '0365987447', '055545574', 5);
 
 INSERT INTO public.vehicule(
 	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
-	VALUES ('citroen', '12/08/2012', '168', '124', '2500', '5', 1, 1, 1);
+	VALUES ('Citroen C4', '2012', '168', '124', '2500', '5', 6, 1, 1);
 INSERT INTO public.vehicule(
 	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
-	VALUES ('renault', '19/02/2013', '168', '124', '2500', '5', 2, 1, 2);
+	VALUES ('Renault Clio', '2003', '170', '150', '1500', '4', 7, 1, 1);
 INSERT INTO public.vehicule(
 	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
-	VALUES ('citroen c4', '12/08/2012', '168', '124', '2500', '5', 1, 1, 3);
+	VALUES ('Peugeot 206', '2012', '175', '124', '2500', '3', 8, 1, 1);
+INSERT INTO public.vehicule(
+	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
+	VALUES ('Seat Ibiza', '2015', '175', '124', '2500', '5', 9, 2, 1);
+INSERT INTO public.vehicule(
+	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
+	VALUES ('Seat Leon', '2012', '180', '124', '2300', '4', 10, 2, 1);
+INSERT INTO public.vehicule(
+	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
+	VALUES ('Renault Megane', '2015', '190', '124', '2500', '3', 11, 3, 1);
+INSERT INTO public.vehicule(
+	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
+	VALUES ('Seat Leon', '2012', '175', '124', '2500', '3', 12, 4, 1);
+INSERT INTO public.vehicule(
+	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
+	VALUES ('Citroen C4', '2012', '175', '124', '2500', '3', 13, 5, 1);
+INSERT INTO public.vehicule(
+	modele, datefabrication, hauteur, largeur, poids, puissance, photo_id, agence_id, statut_id)
+	VALUES ('Citroen C3', '2012', '175', '124', '2500', '3', 14, 5, 1);
+
 
 INSERT INTO public.users(
     name, firstname, email, password, phone, admin)
@@ -50,3 +110,5 @@ INSERT INTO public.users(
 INSERT INTO public.users(
     name, firstname, email, password, phone, admin, agence_id)
     VALUES ('Jean', 'Michel', 'jean.michel@viacesi.fr', '$2y$10$I/egw2bqdv77DsImPLaYNOKlTKswxiKA6kFxWXi0q4RN25Pgvw3ES', '81594', false, 2);
+
+

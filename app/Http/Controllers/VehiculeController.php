@@ -39,7 +39,8 @@ class VehiculeController extends Controller
         foreach ($statut as $div) {
             $statutLabel[] = $div->name;
         }
-        return view('vehicule', ['vehicule' => Vehicule::findOrFail($id), 'statut' => $statutLabel]);
+        $photo = Photo::findOrFail(Vehicule::findOrFail($id)->photo_id);
+        return view('vehicule', ['vehicule' => Vehicule::findOrFail($id), 'statut' => $statutLabel, 'photo' => $photo]);
     }
 
 
@@ -82,7 +83,8 @@ class VehiculeController extends Controller
         foreach ($statut as $div) {
             $statutLabel[] = $div->name;
         }
-        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id), 'statut' => $statutLabel]);
+        $photo = Photo::findOrFail(Vehicule::findOrFail($vehicule->id)->photo_id);
+        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id), 'statut' => $statutLabel, 'photo' => $photo]);
     }
 
     public function edit(Requests\EditVehiculeRequest $request)
@@ -100,8 +102,8 @@ class VehiculeController extends Controller
         foreach ($statut as $div) {
             $statutLabel[] = $div->name;
         }
-        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id), 'statut' => $statutLabel]);
-    }
+        $photo = Photo::findOrFail(Vehicule::findOrFail($vehicule->id)->photo_id);
+        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id), 'statut' => $statutLabel, 'photo' => $photo]);    }
 
     public function delete($id)
     {
@@ -110,6 +112,7 @@ class VehiculeController extends Controller
         $vehicule->delete();
         $vehicules = Vehicule::where('agence_id', $id)
             ->get();
-        return view('agence', ['agence' => Agence::findOrFail($agence), 'vehicules' => $vehicules, 'actualAgency' => $id]);
+        $photo = Photo::findOrFail(Agence::findOrFail($id)->photo_id);
+        return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => $vehicules, 'actualAgency' => $id, 'photo' => $photo]);
     }
 }

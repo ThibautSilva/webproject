@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="resaVehicule">
             <div class="photoResaVehicule">
-                {{ Html::image('images/voiture.png') }}
+                {{ Html::image('images/'.$photo->urlphoto) }}
             </div>
             <div class="infoResaVehicule">
                 <div class="editVehicule">

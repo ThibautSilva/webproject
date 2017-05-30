@@ -35,7 +35,8 @@ class AgenceController extends Controller
     {
         $vehicules = Vehicule::where('agence_id', $id)
             ->get();
-        return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => $vehicules, 'actualAgency' => $id]);
+        $photo = Photo::findOrFail(Agence::findOrFail($id)->photo_id);
+        return view('agence', ['agence' => Agence::findOrFail($id), 'vehicules' => $vehicules, 'actualAgency' => $id, 'photo' => $photo]);
     }
 
     public function addAgencyInfos()
@@ -63,6 +64,6 @@ class AgenceController extends Controller
         $agency->save();
         $vehicules = Vehicule::where('agence_id', $agency->id)
             ->get();
-        return view('agence', ['agence' => Agence::findOrFail($agency->id), 'vehicules' => $vehicules]);
-    }
+        $photo = Photo::findOrFail(Agence::findOrFail($agency->id)->photo_id);
+        return view('agence', ['agence' => Agence::findOrFail($agency->id), 'vehicules' => $vehicules, 'actualAgency' => $agency->id, 'photo' => $photo]);    }
 }
