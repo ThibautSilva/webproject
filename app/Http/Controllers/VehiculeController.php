@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Agence;
 use App\Http\Requests;
+use App\Photo;
 use App\Status;
 use App\Vehicule;
 use Illuminate\Http\Request;
@@ -39,10 +40,9 @@ class VehiculeController extends Controller
         {
             $statutLabel[] = $div->name ;
         }
-
-
         return view('vehicule', ['vehicule' => Vehicule::findOrFail($id), 'statut' => $statutLabel]);
     }
+
 
     public function addVehiculeInfos()
     {
@@ -61,6 +61,17 @@ class VehiculeController extends Controller
     {
         $vehicule = new Vehicule;
         $vehicule->modele = $request->input('marque');
+        $vehicule->datefabrication = $request->input('date');
+        $vehicule->hauteur = $request->input('hauteur');
+        $vehicule->largeur = $request->input('largeur');
+        $vehicule->poids = $request->input('poid');
+        $vehicule->puissance = $request->input('puissanceCV');
+        if ($request->input('agence') == 0){
+            $vehicule->agence_id = 1;
+        } else {
+            $vehicule->agence_id = $request->input('agence');
+        }
+        $vehicule->statut_id = 2;
         $destination = 'images/'; // your upload folder
         $image = $request->file('photo');
         if(isset($image)) {
@@ -72,6 +83,42 @@ class VehiculeController extends Controller
             $vehicule->photo_id = $photo->id;
         }
         $vehicule->save();
-        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id)]);
+        $statut = Status::all();
+        $statutLabel = array();
+        foreach ($statut as $div)
+        {
+            $statutLabel[] = $div->name ;
+        }
+        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id), 'statut' => $statutLabel]);
+    }
+
+    public function edit(Requests\EditVehiculeRequest $request)
+    {
+        $vehicule = Vehicule::findOrFail($request->input('idvoiture'));
+        $vehicule->modele = $request->input('modele');
+        $vehicule->datefabrication = $request->input('datefabrication');
+        $vehicule->hauteur = $request->input('hauteur');
+        $vehicule->largeur = $request->input('largeur');
+        $vehicule->poids = $request->input('poids');
+        $vehicule->puissance = $request->input('puissance');
+        $vehicule->save();
+        $statut = Status::all();
+        $statutLabel = array();
+        foreach ($statut as $div)
+        {
+            $statutLabel[] = $div->name ;
+        }
+        return view('vehicule', ['vehicule' => Vehicule::findOrFail($vehicule->id), 'statut' => $statutLabel]);
+
+       // return redirect('vehicule/'.$request->input('idvoiture'));
+    }
+
+    public function delete($id){
+        $vehicule = Vehicule::findOrFail($id);
+        $agence = $vehicule->agence_id;
+        $vehicule->delete();
+        $vehicules = Vehicule::where('agence_id', $id)
+            ->get();
+        return view('agence', ['agence' => Agence::findOrFail($agence), 'vehicules' => $vehicules, 'actualAgency' => $id]);
     }
 }

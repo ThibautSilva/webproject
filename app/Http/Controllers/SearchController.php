@@ -37,7 +37,7 @@ class SearchController extends Controller
         return view('search', ['agencesLabel' => $agencesLabel, 'statuts' => $statusLabel]);
     }
 
-    public function search(Requests\AddVehiculeRequest $request)
+    public function search(Requests\SearchRequest $request)
     {
         var_dump($request);
         return view('agences');

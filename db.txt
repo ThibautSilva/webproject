@@ -1,9 +1,9 @@
 INSERT INTO public.statut(
 	name)
-	VALUES ('en location');
+	VALUES ('en stock');
 INSERT INTO public.statut(
 	name)
-	VALUES ('en stock');
+	VALUES ('en location');
 INSERT INTO public.statut(
 	name)
 	VALUES ('en démonstration');

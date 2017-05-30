@@ -35,6 +35,10 @@ Route::get('/agence/{id}', 'AgenceController@showAgency');
 
 Route::get('/vehicule/{id}', 'VehiculeController@showVehicule');
 
+Route::put('/vehicule/{id}', 'VehiculeController@edit');
+
+Route::get('/vehicule/delete/{id}', 'VehiculeController@delete');
+
 Route::get('/agent/{id}', 'AgentController@showAgent');
 
 Route::get('/search', 'SearchController@displaySearch');

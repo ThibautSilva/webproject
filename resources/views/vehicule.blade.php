@@ -11,7 +11,7 @@
             </div>
             <div class="infoResaVehicule">
                 <div class="editVehicule">
-                    <a href="{{ url('/logout') }}"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a href="{{ url('/vehicule/delete/'. $vehicule->id) }}"><span class="glyphicon glyphicon-remove"></span></a>
                     <div id="edit"><a><span class="glyphicon glyphicon-edit"></span></a></div>
                 </div>
                 <div class="formAddVehicle" id="formReserver">
@@ -51,7 +51,10 @@
 
                 <div class="formAddVehicle" id="formEdit">
 
-                    {!! Form::open(['method' => 'put', 'files'=>true]) !!}
+                    {!! Form::open(['method' => 'put', 'action' => array('VehiculeController@edit', $vehicule->id), 'files'=>true]) !!}
+
+
+                    {{ Form::hidden('idvoiture', $vehicule->id) }}
 
                     <div class="form-group">
 
