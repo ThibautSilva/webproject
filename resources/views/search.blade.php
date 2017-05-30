@@ -15,13 +15,13 @@
                 <div class="form-group">
                     <div class="critere">
                         {!! Form::label('title', 'Agence') !!}
-                        {!! Form::select ('agence', [null=>'Toutes les agences'] + $agencesLabel, '', ['class' =>'form-control']) !!}
+                        {!! Form::select ('agence', [0=>'Toutes les agences'] + $agencesLabel, '', ['class' =>'form-control']) !!}
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="critere">
                         {!! Form::label('title', 'Statut') !!}
-                        {!! Form::select ('statut', $statuts, '', ['class' =>'form-control']) !!}
+                        {!! Form::select ('statut', [0=>'Tout les statuts'] + $statuts, '', ['class' =>'form-control']) !!}
                     </div>
                 </div>
                 <div class="form-group">
@@ -43,8 +43,31 @@
         {!! Form::close() !!}
 
         <div class="contentSearch">
-            @extends("nosVehicules")
-            @extends("agences")
+            @if(isset($vehicules))
+                @foreach ($vehicules as $voiture)
+                    <div class="vehiculesAgence">
+                        <div class="photoVehicule">
+                            {{--{{ Html::image('images/' . $voiture->urlphoto, 'voiture', array('class' => 'photoVoiture')) }}--}}
+                            {{ Html::image('images/voiture2.png') }}
+                        </div>
+                        <div class="recapInfoVehicule">
+                            <div class="infoVehicule">{{$voiture->modele}}</div>
+                            <div class="infoVehicule">{{$voiture->datefabrication}}</div>
+                            <div class="infoVehicule">{{$voiture->puissance}}</div>
+                            <div class="infoVehicule">{{$voiture->hauteur}}</div>
+                            <div class="infoVehicule">{{$voiture->largeur}}</div>
+                            <div class="infoVehicule">{{$voiture->poids}}</div>
+                        </div>
+                        {{--<div class="divReserverVehicule">--}}
+                        {{--<button class="btn btn-primary btnReserverVehicule">Choisir ce véhicule</button>--}}
+                        {{--</div>--}}
+                        <div class="divReserverVehicule"><a href="{{ url('/vehicule/' . $voiture->id) }}">
+                                <button class="btn btn-primary btnReserverVehicule">Choisir ce véhicule</button>
+                            </a></div>
+                    </div>
+
+                @endforeach
+            @endif
         </div>
     </div>
 

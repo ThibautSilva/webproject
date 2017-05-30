@@ -34,7 +34,7 @@ class SearchController extends Controller
         {
             $statusLabel[] = $div->name ;
         }
-        return view('search', ['agencesLabel' => $agencesLabel, 'statuts' => $statusLabel]);
+        return view('search', ['agencesLabel' => $agencesLabel, 'statuts' => $statusLabel, 'agences' => $agences, 'vehicules' => Vehicule::all()]);
     }
 
     public function search(Requests\SearchRequest $request)

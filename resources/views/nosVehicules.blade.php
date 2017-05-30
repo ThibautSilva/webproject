@@ -1,5 +1,5 @@
 @section("nosVehicules")
-    @if(isset($voitures))
+    @if(isset($vehicules))
         @foreach ($vehicules as $voiture)
             <div class="vehiculesAgence">
                 <div class="photoVehicule">
